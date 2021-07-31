@@ -6,3 +6,4 @@ for i in range(n):
 for i in range(n):
     ans+=data[i]*(i+1)
 print(ans)
+#b294
