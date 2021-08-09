@@ -11,3 +11,4 @@ signed main(){
     cout<<a*b<<endl;
     }
 }
+//d127
