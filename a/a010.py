@@ -3,7 +3,7 @@ while True :
     try :
         int(a)
     except :
-        print('不是整数哦')
+        print('非整數') 
     else :
         a = int(a)
         b = 2
