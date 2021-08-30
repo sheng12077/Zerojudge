@@ -20,4 +20,6 @@ signed main(){
         vec.clear();
     }
 }
+//d583
 //d587
+//一樣==
