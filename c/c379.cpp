@@ -6,3 +6,4 @@ signed main(){
     cin>>c;
     cout<<c*0.3;
 }
+//c379
