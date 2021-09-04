@@ -45,3 +45,4 @@ signed main(){
     }
     cout<<ans;
 }
+//f677
