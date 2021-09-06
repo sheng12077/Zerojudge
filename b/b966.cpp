@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#include<utility>
 using namespace std;
 
 
@@ -7,7 +6,10 @@ int n,L,R,cnt;
 vector<int> vec;
 
 signed main(){
-
+    
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    
     for (int i=0;i<=10000000;i++){
         vec.push_back(0);
     }
