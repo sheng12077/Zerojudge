@@ -36,7 +36,7 @@ signed main(){
                     else{                           //#設為-1
                         maze[i][j][k]=-1;
                     }               
-                    path[i][j][k]=0;                //initalize
+                    path[i][j][k]=-1;                //initalize
                 }
             }
         }
@@ -46,7 +46,7 @@ signed main(){
         qx.push(sx);
         qy.push(sy);
         qz.push(sz);
-
+        path[sx][sy][sz]=0;
         int dx[6]={0,0,0,0,-1,1};
         int dy[6]={1,0,-1,0,0,0};
         int dz[6]={0,1,0,-1,0,0};
@@ -62,7 +62,7 @@ signed main(){
                 int tx=x+dx[i];
                 int ty=y+dy[i];
                 int tz=z+dz[i];
-                if(path[tx][ty][tz]==0 and maze[tx][ty][tz]!=-1 and tx>=0 and ty>=0 and tz>=0 and tx<l and ty<r and tz<c and (tx!=sx or ty!=sy or tz!=sz)){
+                if(path[tx][ty][tz]==-1 and maze[tx][ty][tz]!=-1 and tx>=0 and ty>=0 and tz>=0 and tx<l and ty<r and tz<c){
                     path[tx][ty][tz]=path[x][y][z]+1;
                     qx.push(tx);
                     qy.push(ty);
@@ -70,7 +70,7 @@ signed main(){
                 }
             }
         }
-        if(path[ex][ey][ez]!=0){
+        if(path[ex][ey][ez]!=-1){
             cout<<"Escaped in "<<path[ex][ey][ez]<<" minute(s)."<<"\n";
         }
         else{
@@ -78,18 +78,3 @@ signed main(){
         }
     }
 }
-/*
-⠄⠄⠄⠄⠄⠄⠄⠈⠉⠁⠈⠉⠉⠙⠿⣿⣿⣿⣿⣿
-⠄⠄⠄⠄⠄⠄⠄⠄⣀⣀⣀⠄⠄⠄⠄⠄⠹⣿⣿⣿
-⠄⠄⠄⠄⠄⢐⣲⣿⣿⣯⠭⠉⠙⠲⣄⡀⠄⠈⢿⣿
-⠐⠄⠄⠰⠒⠚⢩⣉⠼⡟⠙⠛⠿⡟⣤⡳⡀⠄⠄⢻
-⠄⠄⢀⣀⣀⣢⣶⣿⣦⣭⣤⣭⣵⣶⣿⣿⣏⠄⠄⣿
-⠄⣼⣿⣿⣿⡉⣿⣀⣽⣸⣿⣿⣿⣿⣿⣿⣿⡆⣀⣿
-⢠⣿⣿⣿⠿⠟⠛⠻⢿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣼
-⠄⣿⣿⣿⡆⠄⠄⠄⠄⠳⡈⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠄⢹⣿⣿⡇⠄⠄⠄⠄⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⠄⠄⢿⣿⣷⣨⣽⣭⢁⣡⣿⣿⠟⣩⣿⣿⣿⠿⠿⠟
-⠄⠄⠈⡍⠻⣿⣿⣿⣿⠟⠋⢁⣼⠿⠋⠉⠄⠄⠄⠄
-⠄⠄⠄⠈⠴⢬⣙⣛⡥⠴⠂⠄⠄⠄⠄⠄⠄⠄⠄⠄
-*/
-//c124
