@@ -24,4 +24,4 @@ signed main(){
         diff=k;
     }
 }
-//e346
+//e340
